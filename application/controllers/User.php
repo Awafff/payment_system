@@ -60,6 +60,16 @@ class User extends CI_Controller {
 
 		if (!empty($idUser)) {
 			if (!empty($typeUser)) {
+				if ($typeUser == 'admin') {
+					$this->load->model('Order_model');
+					$dataOrder = $this->Order_model->getOrder();
+					$this->session->set_userdata('orderListSessionPSys', $dataOrder );					
+				}elseif ($typeUser == 'user') {
+					$this->load->model('Order_model');
+					$dataOrder = $this->Order_model->getOrder();
+					$this->session->set_userdata('orderListSessionPSys', $dataOrder );
+				}
+				
 				$this->load->view('user/v_page_dashboard');
 			}else{
 				redirect('login');

@@ -25,10 +25,8 @@
 
 				<?php 
 
-					if ($typeUser == 'admin') {
-						$this->load->view('admin/v_table_order'); 
-					}else if($typeUser == 'user'){
-
+					if (!empty($typeUser)) {
+						$this->load->view('user/v_table_product');
 					}else{
 						echo 'error';
 					}

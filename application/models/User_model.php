@@ -8,15 +8,11 @@ class User_model extends CI_Model{
 		$this->db->from('user');
 		$this->db->where(array('username_user'=>$username, 'password_user'=>md5($password)));
 
-		// if($getUser = $this->db->num_rows()>0){
-			if($getUser=$this->db->get()){
-				return $getUser->row_array();
-			}else{
-				return false;
-			}
-		// }else{
-			
-		// }	
+		if($getUser=$this->db->get()){
+			return $getUser->row_array();
+		}else{
+			return false;
+		}
 	}
 
 }

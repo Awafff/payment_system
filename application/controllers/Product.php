@@ -9,6 +9,21 @@ class Product extends CI_Controller {
 		$this->load->model('Product_model');
 	}
 
+	function index(){
+		$idUser = $this->session->userdata('userIdSessionPSys');
+		$typeUser = $this->session->userdata('userTypeSessionPSys');
+
+		if (!empty($idUser)) {
+			$dataProduct = $this->Product_model->getProduct();
+
+			$this->session->set_userdata('productListSessionPSys', $dataProduct);
+
+			$this->load->view('user/v_page_product');
+		}else{
+			redirect('login');
+		}
+	}
+
 
 
 }
