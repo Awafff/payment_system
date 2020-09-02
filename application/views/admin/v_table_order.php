@@ -25,6 +25,7 @@
 				<?php foreach ($dataOrder->result() as $order): ?>
 				<tr>
 					<?php 
+						$idOrder = $order->id_order; 
 						$fullnameOrder = $order->fullname_user; 
 						$emailOrder = $order->email_user;
 						$dateOrder = $order->date_order;
@@ -34,7 +35,22 @@
 					<td><?php echo $emailOrder; ?></td>
 					<td><?php echo $dateOrder; ?></td>
 					<td><?php echo $statusOrder; ?></td>
-					<td></td>
+					<td>
+						
+						<?php if ($statusOrder == 'waiting'): ?>
+							<a class="btn btn-xs btn-primary" href="<?php echo base_url().'/order/vConfirmation/'.$idOrder; ?>">
+								<span class="fa fa-eye"></span>
+							</a>
+							<a class="btn btn-xs btn-success" href="<?php echo base_url().'order/activate/'.$idOrder; ?>">
+								<span class="fa fa-check"></span>
+							</a>							
+						<?php endif ?>
+						<?php if ($statusOrder != 'paid' && $statusOrder != 'cancel'): ?>
+							<a class="btn btn-xs btn-danger" href="<?php echo base_url().'order/delete/'.$idOrder; ?>">
+								<span class="fa fa-times"></span>
+							</a>
+						<?php endif ?>
+					</td>
 				</tr>
 				<?php endforeach ?>
 			<?php endif ?>

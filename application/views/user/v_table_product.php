@@ -18,7 +18,7 @@
 		</thead>
 		<tbody>
 			<?php if ($dataProduct == false): ?>
-				<td colspan="5">Data Order Empty...</td>
+				<td colspan="5">Data Product Empty...</td>
 			<?php endif ?>
 			<?php if ($dataProduct != false): ?>
 				<?php foreach ($dataProduct->result() as $product): ?>

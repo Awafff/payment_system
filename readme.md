@@ -17,7 +17,7 @@ Features
 Server Requirements
 *******************
 
-Programing Language : PHP 5.6 (Codeigniter 3.16)
+Programing Language : PHP 5.6 (Codeigniter 3.16)  
 Front End : Booststrap 3.2, jQuery v1.11.1, Font Awesome 4.5.0 
 
 ************
@@ -33,13 +33,13 @@ Installation
 Login
 *******
 
-Login as User
-url 	 : https://localhost/payment_confirmation/login
-username : User
-password : 12341234
+**Login as User**  
+url 	 : https://localhost/payment_confirmation/login  
+username : User  
+password : 12341234  
 
-Login as Admin
-url 	 : https://localhost/payment_confirmation/login
-username : Admin
-password : 12341234
+**Login as Admin**  
+url 	 : https://localhost/payment_confirmation/login  
+username : Admin  
+password : 12341234  
 

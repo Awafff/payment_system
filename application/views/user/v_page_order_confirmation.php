@@ -21,25 +21,9 @@
 				<?php $this->load->view('component/v_sidebar'); ?>
 			</div>
 			<div class="col-md-9">
+				
+				<?php $this->load->view('user/v_form_confirmation'); ?>
 
-
-				<?php 
-
-					if ($typeUser == 'admin') {
-						$this->load->view('admin/v_table_order'); 
-					}else if($typeUser == 'user'){
-						$this->load->view('user/v_panel_order'); 
-						$this->load->view('user/v_thumbnail_product'); 
-						
-					}else{
-						echo 'error';
-					}
-
-					
-				?>
-
-
-				<?php //$this->load->view('component/v_component_user_list'); ?>
 
 			</div>
 		</div>

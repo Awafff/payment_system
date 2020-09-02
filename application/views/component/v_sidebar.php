@@ -19,7 +19,7 @@
 
 
 <a class="btn btn-info col-md-12 col-xs-12" href="<?php echo base_url() ?>product">
-	<span class="fa fa-list pull-left"></span> <span class="pull-right">Product</span>
+	<span class="fa fa-list pull-left"></span> <span class="pull-right">Product List</span>
 </a>
 
 <a class="btn btn-danger col-md-12 col-xs-12" href="<?php echo base_url() ?>/user/logout">

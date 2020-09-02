@@ -7,8 +7,7 @@
 	<?php $this->load->view('component/v_head');?>
 </head>
 <body>
-	<div id="notifications"><?php echo $this->session->flashdata('msg'); ?></div> 
-	<?php //$this->load->view('component/v_component_out_navigation');?>
+	<div id="notifications"><?php echo $this->session->flashdata('msg'); ?></div>
 	<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12 bodyContent" height="100%" style="padding: 5% 50px;">
 
 		<?php echo form_open('login') ?>
@@ -32,12 +31,6 @@
 
 					<div class="form-group">	
 						<button  class=" col-md-12 col-sm-12 col-lg-12 col-xs-12 btn btn-primary btn-lg" type="submit" name="submit"><b class="	pull-left">Login</b> <span class="fa fa-arrow-right pull-right"></span></button>
-						<!--
-				   		    <p><a href="">lupa password ?</a></p>
-							<center><span>atau</span></center>
-
-			   		   	<a class="submitBox col-md-12 col-sm-12 col-lg-12 col-xs-12  submitBoxPosition btn" href="<?php //echo base_url();?>registration
-				   		   	">Mendaftar</a>-->
 				   	</div>
 					</p>
 
@@ -47,8 +40,7 @@
 			</form>
 	</div>
 </div>
-	
-<?php //$this->load->view('component/v_component_footer_fixed');?>
+
 <script type="text/javascript">
 	$('#notifications').slideDown('slow').delay(3000).slideUp('slow');
 </script>

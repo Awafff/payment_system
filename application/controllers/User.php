@@ -28,11 +28,12 @@ class User extends CI_Controller {
 			$password = $this->input->post('password');
 			$auth = $this->User_model->auth($username, $password);
 
-			if ($auth !='FALSE') {
+			if ($auth != false) {
 				$this->session->set_userdata('userIdSessionPSys', $auth['id_user']);
 				$this->session->set_userdata('userTypeSessionPSys', $auth['type_user']);
 				$this->session->set_userdata('userNameSessionPSys', $auth['username_user']);
 				$this->session->set_userdata('userFullnameSessionPSys', $auth['fullname_user']);
+				$this->session->set_userdata('userEmailSessionPSys', $auth['email_user']);
 				redirect('dashboard');
 			}else{
 				$this->session->set_flashdata('msg', 
@@ -42,7 +43,7 @@ class User extends CI_Controller {
 				</div>');
 				redirect('login');
 			}
-		} else{
+		}else {
 
 			$this->load->view('user/v_page_login');
 		}
@@ -63,11 +64,14 @@ class User extends CI_Controller {
 				if ($typeUser == 'admin') {
 					$this->load->model('Order_model');
 					$dataOrder = $this->Order_model->getOrder();
-					$this->session->set_userdata('orderListSessionPSys', $dataOrder );					
+					$this->session->set_userdata('orderListSessionPSys', $dataOrder);					
 				}elseif ($typeUser == 'user') {
 					$this->load->model('Order_model');
-					$dataOrder = $this->Order_model->getOrder();
-					$this->session->set_userdata('orderListSessionPSys', $dataOrder );
+					$dataOrder = $this->Order_model->userOrder($idUser);
+					$this->session->set_userdata('orderUserSessionPSys', $dataOrder);
+					$this->load->model('Product_model');
+					$dataProduct = $this->Product_model->getProduct();
+					$this->session->set_userdata('productListSessionPSys', $dataProduct);
 				}
 				
 				$this->load->view('user/v_page_dashboard');

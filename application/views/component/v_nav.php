@@ -12,9 +12,8 @@
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
 
-				<li ><a href="<?php echo base_url() ?>user/dashboard"><span class="fa fa-home"></span></a></li>
-				<li><a href="<?php echo base_url() ?>anime/list_ost"><span class="fa fa-music"></span></a></li>
-
+				<li ><a href="<?php echo base_url() ?>dashboard"><span class="fa fa-home"></span></a></li>
+				
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-cogs"></span> <span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
