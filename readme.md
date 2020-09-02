@@ -34,12 +34,12 @@ Login
 *******
 
 **Login as User**  
-url 	 : https://localhost/payment_confirmation/login  
+url 	 : https://localhost/payment_system/login  
 username : User  
 password : 12341234  
 
 **Login as Admin**  
-url 	 : https://localhost/payment_confirmation/login  
+url 	 : https://localhost/payment_system/login  
 username : Admin  
 password : 12341234  
 
