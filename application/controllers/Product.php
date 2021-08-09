@@ -13,15 +13,16 @@ class Product extends CI_Controller {
 		$idUser = $this->session->userdata('userIdSessionPSys');
 		$typeUser = $this->session->userdata('userTypeSessionPSys');
 
-		if (!empty($idUser)) {
+		// if (!empty($idUser)) {
 			$dataProduct = $this->Product_model->getProduct();
+			echo json_encode($dataProduct);
 
 			$this->session->set_userdata('productListSessionPSys', $dataProduct);
 
-			$this->load->view('user/v_page_product');
-		}else{
-			redirect('login');
-		}
+			// $this->load->view('user/v_page_product');
+		// }else{
+		// 	redirect('login');
+		// }
 	}
 
 

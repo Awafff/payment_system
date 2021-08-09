@@ -26,7 +26,26 @@ class User extends CI_Controller {
 
 			$username = $this->input->post('username');
 			$password = $this->input->post('password');
-			$auth = $this->User_model->auth($username, $password);
+			
+
+
+			$checkEmail = filter_var($username, FILTER_VALIDATE_EMAIL);
+			// echo "Email Status : ".$checkEmail;
+			$access = '';
+			if (!empty($checkEmail)) {
+				$access = 'email';
+			}else{
+				$access = 'username';
+			}
+			$auth = $this->User_model->auth($access, $username, $password);
+			echo json_encode($auth);
+
+			// if (password_verify($password, $auth['password_user'], )) {
+			// 	echo "success...";
+			// }else{
+			// 	echo "password incorrect!!!";
+			// }
+
 
 			if ($auth != false) {
 				$this->session->set_userdata('userIdSessionPSys', $auth['id_user']);
@@ -34,7 +53,7 @@ class User extends CI_Controller {
 				$this->session->set_userdata('userNameSessionPSys', $auth['username_user']);
 				$this->session->set_userdata('userFullnameSessionPSys', $auth['fullname_user']);
 				$this->session->set_userdata('userEmailSessionPSys', $auth['email_user']);
-				redirect('dashboard');
+				// redirect('dashboard');
 			}else{
 				$this->session->set_flashdata('msg', 
 				'<div class="alert alert-danger">
